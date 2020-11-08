@@ -1,0 +1,59 @@
+{
+    "alarm_list": [
+        {
+            "id": 16908288,
+            "bit": 0,
+            "is_event": false
+        },
+        {
+            "id": 16908289,
+            "bit": 1,
+            "is_event": false
+        },
+        {
+            "id": 16908290,
+            "bit": 2,
+            "is_event": false
+        },
+        {
+            "id": 16908291,
+            "bit": 3,
+            "is_event": false
+        },
+        {
+            "id": 16908292,
+            "bit": 4,
+            "is_event": false
+        },
+        {
+            "id": 16908293,
+            "bit": 5,
+            "is_event": false
+        },
+        {
+            "id": 16908294,
+            "bit": 6,
+            "is_event": false
+        },
+        {
+            "id": 16908295,
+            "bit": 7,
+            "is_event": false
+        },
+        {
+            "id": 16908296,
+            "bit": 8,
+            "is_event": false
+        },
+        {
+            "id": 16908297,
+            "bit": 9,
+            "is_event": false
+        },
+        {
+            "id": 16908298,
+            "bit": 10,
+            "is_event": false
+        },
+    ]
+}

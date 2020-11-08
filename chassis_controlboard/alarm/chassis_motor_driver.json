@@ -1,0 +1,124 @@
+{
+    "alarm_list": [
+        {
+            "id": 16973824,
+            "bit": 0,
+            "is_event": false
+        },
+        {
+            "id": 16973825,
+            "bit": 1,
+            "is_event": false
+        },
+        {
+            "id": 16973826,
+            "bit": 2,
+            "is_event": false
+        },
+        {
+            "id": 16973827,
+            "bit": 3,
+            "is_event": false
+        },
+        {
+            "id": 16973828,
+            "bit": 4,
+            "is_event": false
+        },
+        {
+            "id": 16973829,
+            "bit": 5,
+            "is_event": false
+        },
+        {
+            "id": 16973830,
+            "bit": 6,
+            "is_event": false
+        },
+        {
+            "id": 16973831,
+            "bit": 7,
+            "is_event": false
+        },
+        {
+            "id": 16973832,
+            "bit": 8,
+            "is_event": false
+        },
+        {
+            "id": 16973833,
+            "bit": 9,
+            "is_event": false
+        },
+        {
+            "id": 16973834,
+            "bit": 10,
+            "is_event": false
+        },
+        {
+            "id": 16973835,
+            "bit": 11,
+            "is_event": false
+        },
+        {
+            "id": 16973836,
+            "bit": 12,
+            "is_event": false
+        },
+        {
+            "id": 16973837,
+            "bit": 13,
+            "is_event": false
+        },
+        {
+            "id": 16973838,
+            "bit": 14,
+            "is_event": false
+        },
+        {
+            "id": 16973839,
+            "bit": 15,
+            "is_event": false
+        },
+        {
+            "id": 16973840,
+            "bit": 16,
+            "is_event": false
+        },
+        {
+            "id": 16973841,
+            "bit": 17,
+            "is_event": false
+        },
+        {
+            "id": 16973842,
+            "bit": 18,
+            "is_event": true
+        },
+		{
+            "id": 16973843,
+            "bit": 19,
+            "is_event": false
+        },
+	    {
+            "id": 16973844,
+            "bit": 20,
+            "is_event": false
+        },
+		{
+            "id": 16973845,
+            "bit": 21,
+            "is_event": false
+        },
+		{
+            "id": 16973846,
+            "bit": 22,
+            "is_event": false
+        },
+		{
+            "id": 16973847,
+            "bit": 23,
+            "is_event": false
+        }
+    ]
+}

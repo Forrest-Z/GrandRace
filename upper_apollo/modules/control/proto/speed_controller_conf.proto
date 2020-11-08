@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package apollo.control;
+
+import "modules/control/proto/pid_conf.proto";
+
+// controller param
+message SpeedControllerConf {
+  optional double ts = 1; // longitudinal controller sampling time
+
+  optional double input_LinearSpeed_limit = 2;
+  optional double input_AngularSpeed_limit = 3;
+
+  optional double output_LinearSpeed_limit = 4;
+  optional double output_AngularSpeed_limit = 5;
+
+  optional double station_controlError_limit = 6;
+  optional double preview_window = 7;
+  optional double controlWeight = 8;
+  
+  optional PidConf station_speedpid_conf = 10;
+  optional PidConf angle_speedpid_conf = 11;
+  
+}

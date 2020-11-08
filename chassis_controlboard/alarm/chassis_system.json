@@ -1,0 +1,110 @@
+{
+    "alarm_list": [
+        {
+            "id": 16842752,
+            "bit": 0,
+            "is_event": false
+        },
+        {
+            "id": 16842753,
+            "bit": 1,
+            "is_event": false
+        },
+        {
+            "id": 16842754,
+            "bit": 2,
+            "is_event": false
+        },
+        {
+            "id": 16842755,
+            "bit": 3,
+            "is_event": false
+        },
+        {
+            "id": 16842756,
+            "bit": 4,
+            "is_event": false
+        },
+        {
+            "id": 16842757,
+            "bit": 5,
+            "is_event": false
+        },
+        {
+            "id": 16842758,
+            "bit": 6,
+            "is_event": false
+        },
+        {
+            "id": 16842759,
+            "bit": 7,
+            "is_event": false
+        },
+        {
+            "id": 16842760,
+            "bit": 8,
+            "is_event": true
+        },
+        {
+            "id": 16842761,
+            "bit": 9,
+            "is_event": false
+        },
+        {
+            "id": 16842762,
+            "bit": 10,
+            "is_event": false
+        },
+        {
+            "id": 16842763,
+            "bit": 11,
+            "is_event": false
+        },
+        {
+            "id": 16842764,
+            "bit": 12,
+            "is_event": false
+        },
+        {
+            "id": 16842765,
+            "bit": 13,
+            "is_event": false
+        },
+        {
+            "id": 16842766,
+            "bit": 14,
+            "is_event": false
+        },
+        {
+            "id": 16842767,
+            "bit": 15,
+            "is_event": true
+        },
+        {
+            "id": 16842768,
+            "bit": 16,
+            "is_event": false
+        },
+        {
+            "id": 16842769,
+            "bit": 17,
+            "is_event": false
+        },
+        {
+            "id": 16842770,
+            "bit": 18,
+            "is_event": false
+        }
+		{
+            "id": 16842771,
+            "bit": 19,
+            "is_event": false
+        }
+		{
+            "id": 16842772,
+            "bit": 20,
+            "is_event": false
+        }
+		
+    ]
+}

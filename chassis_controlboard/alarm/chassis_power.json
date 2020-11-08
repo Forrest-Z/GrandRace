@@ -1,0 +1,129 @@
+{
+    "alarm_list": [
+        {
+            "id": 17170432,
+            "bit": 0,
+            "is_event": false
+        },
+        {
+            "id": 17170433,
+            "bit": 1,
+            "is_event": false
+        },
+        {
+            "id": 17170434,
+            "bit": 2,
+            "is_event": false
+        },
+        {
+            "id": 17170435,
+            "bit": 3,
+            "is_event": false
+        },
+        {
+            "id": 17170436,
+            "bit": 4,
+            "is_event": false
+        },
+        {
+            "id": 17170437,
+            "bit": 5,
+            "is_event": false
+        },
+        {
+            "id": 17170438,
+            "bit": 6,
+            "is_event": false
+        },
+        {
+            "id": 17170439,
+            "bit": 7,
+            "is_event": false
+        },
+        {
+            "id": 17170440,
+            "bit": 8,
+            "is_event": false
+        },
+        {
+            "id": 17170441,
+            "bit": 9,
+            "is_event": false
+        },
+        {
+            "id": 17170442,
+            "bit": 10,
+            "is_event": false
+        },
+        {
+            "id": 17170443,
+            "bit": 11,
+            "is_event": false
+        },
+        {
+            "id": 17170444,
+            "bit": 12,
+            "is_event": false
+        },
+        {
+            "id": 17170445,
+            "bit": 13,
+            "is_event": false
+        },
+        {
+            "id": 17170446,
+            "bit": 14,
+            "is_event": false
+        },
+        {
+            "id": 17170447,
+            "bit": 15,
+            "is_event": false
+        },
+        {
+            "id": 17170448,
+            "bit": 16,
+            "is_event": false
+        },
+        {
+            "id": 17170449,
+            "bit": 17,
+            "is_event": false
+        },
+        {
+            "id": 17170450,
+            "bit": 18,
+            "is_event": true
+        },
+		{
+            "id": 17170451,
+            "bit": 19,
+            "is_event": false
+        },
+	    {
+            "id": 17170452,
+            "bit": 20,
+            "is_event": false
+        },
+		{
+            "id": 17170453,
+            "bit": 21,
+            "is_event": false
+        },
+		{
+            "id": 17170454,
+            "bit": 22,
+            "is_event": false
+        },
+		{
+            "id": 17170455,
+            "bit": 23,
+            "is_event": false
+        },
+		{
+            "id": 17170456,
+            "bit": 24,
+            "is_event": false
+        }
+    ]
+}

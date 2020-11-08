@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="rosserial_python" type="serial_node.py" name="rosserial_python" respawn="true">
+  </node>
+</launch>

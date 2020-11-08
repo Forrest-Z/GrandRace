@@ -1,0 +1,104 @@
+{
+    "alarm_list": [
+        {
+            "id": 17039360,
+            "bit": 0,
+            "is_event": false
+        },
+        {
+            "id": 17039361,
+            "bit": 1,
+            "is_event": false
+        },
+        {
+            "id": 17039362,
+            "bit": 2,
+            "is_event": false
+        },
+        {
+            "id": 17039363,
+            "bit": 3,
+            "is_event": false
+        },
+        {
+            "id": 17039364,
+            "bit": 4,
+            "is_event": false
+        },
+        {
+            "id": 17039365,
+            "bit": 5,
+            "is_event": false
+        },
+        {
+            "id": 17039366,
+            "bit": 6,
+            "is_event": false
+        },
+        {
+            "id": 17039367,
+            "bit": 7,
+            "is_event": false
+        },
+        {
+            "id": 17039368,
+            "bit": 8,
+            "is_event": false
+        },
+        {
+            "id": 17039369,
+            "bit": 9,
+            "is_event": false
+        },
+        {
+            "id": 17039370,
+            "bit": 10,
+            "is_event": false
+        },
+        {
+            "id": 17039371,
+            "bit": 11,
+            "is_event": false
+        },
+        {
+            "id": 17039372,
+            "bit": 12,
+            "is_event": false
+        },
+        {
+            "id": 17039373,
+            "bit": 13,
+            "is_event": false
+        },
+        {
+            "id": 17039374,
+            "bit": 14,
+            "is_event": false
+        },
+        {
+            "id": 17039375,
+            "bit": 15,
+            "is_event": false
+        },
+        {
+            "id": 17039376,
+            "bit": 16,
+            "is_event": false
+        },
+        {
+            "id": 17039377,
+            "bit": 17,
+            "is_event": false
+        },
+		{
+            "id": 17039378,
+            "bit": 18,
+            "is_event": true
+        }
+		{
+            "id": 17039379,
+            "bit": 19,
+            "is_event": false
+        }
+    ]
+}

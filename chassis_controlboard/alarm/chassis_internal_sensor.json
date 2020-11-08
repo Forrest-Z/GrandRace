@@ -1,0 +1,29 @@
+{
+    "alarm_list": [
+        {
+            "id": 17104896,
+            "bit": 0,
+            "is_event": false
+        },
+        {
+            "id": 17104897,
+            "bit": 1,
+            "is_event": false
+        },
+        {
+            "id": 17104898,
+            "bit": 2,
+            "is_event": false
+        },
+        {
+            "id": 17104899,
+            "bit": 3,
+            "is_event": false
+        },
+        {
+            "id": 17104900,
+            "bit": 4,
+            "is_event": false
+        }
+    ]
+}

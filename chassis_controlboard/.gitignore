@@ -1,0 +1,8 @@
+*.TMP
+
+# Ignore useless projects and middle products of compile operation
+MDK-ARM/*
+!MDK-ARM/*.uvprojx
+!MDK-ARM/*.s
+!MDK-ARM/*.bin
+!MDK-ARM/*.exe

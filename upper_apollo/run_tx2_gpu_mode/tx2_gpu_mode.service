@@ -1,0 +1,12 @@
+[Unit]
+Description= open run tx2 gpu mode 
+
+[Service]
+ExecStartPre=/usr/sbin/nvpmodel -m 0 
+
+
+#ExecStart=/home/nvidia/work/ApolloAuto/apollo/scripts/run_tx2_gpu_mode.sh
+ExecStart=/bin/bash /home/nvidia/jetson_clocks.sh
+
+[Install]
+WantedBy=multi-user.target

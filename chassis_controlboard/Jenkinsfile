@@ -1,0 +1,190 @@
+pipeline {
+    agent {
+		node {
+			label "master"
+		}
+	}
+	environment {
+		def docker_host = "192.168.1.193:85"
+		sendmail = 'yes'
+		def GIT_TAG = sh (returnStdout: true,script: 'git tag --contains').trim()
+	}
+	stages {
+            stage('Prepare') {
+                steps {
+                echo "1.Prepare Stage"
+                checkout scm
+                }
+             }
+		stage('cppcheck scan'){
+			when {
+				anyOf {
+					branch "dev_master_chassis";
+					branch "release"
+				}
+			}
+			steps {
+				echo "2.cppcheck scan stage"
+				script {
+					sh "cppcheck --enable=all --inconclusive --xml --xml-version=2 ./* 2> cppcheck.xml"
+				}
+			}
+		}
+		stage('sonarqube scan'){
+			when {
+				anyOf {
+			        branch "dev_master_chassis";
+					branch "release"
+			    }
+		    }
+			steps {
+				script {
+					def sonarqubeScannerHome = tool name: 'sonarqube'
+						withSonarQubeEnv('sonarqube') {
+						sh "${sonarqubeScannerHome}/bin/sonar-scanner -Dsonar.branch.name=master"
+						}
+				}
+			}
+		}
+		stage("QualityGate") {
+			when {
+				anyOf {
+					branch "dev_master_chassis";
+					branch "release"
+				}
+			}
+			steps {
+				script {
+					timeout(time: 1) {       // 防止获取回调出现异常情况，设置超时时间
+						def qg = waitForQualityGate()
+							if (qg.status != 'OK') {
+							error "Pipeline aborted due to quality gate failure: ${qg.status}"
+							}
+					}
+				}
+			}
+		}
+		//stage('build to tx3') {
+		//	agent {
+		//		node {
+		//			label "TX3"
+		//		}
+		//	}
+		//	options {
+		//		timeout(time: 1, unit: 'HOURS')
+		//	}
+		//	environment {
+		//		GIT_TAG = sh (returnStdout: true,script: 'git tag --contains').trim()
+		//	}
+		//	stages{
+		//		stage('docker login') {
+		//			steps {
+		//				script {
+		//					sh "docker login -u admin -p Admin123 ${docker_host}"
+		//				}
+		//			}
+		//		}
+		//		stage('test_docker_build ') {
+		//			when {
+		//				allOf {
+		//					branch 'feature_*';
+		//					branch 'develop_*';
+		//					branch 'release'
+		//				}
+		//			}
+		//			steps {
+		//				script {
+		//					sh "apollo/scripts/ci/build/dailyBuild.sh ${env.BRANCH_NAME}"
+		//				}
+		//			}
+		//		}
+		//		stage('docker_build ') {
+		//			when {
+		//				allOf {
+		//					expression { ${GIT_TAG} != null }
+		//					}
+		//				}
+		//			steps {
+		//				script {
+		//					sh "apollo/scripts/ci/build/dailyBuild.sh $GIT_TAG"
+		//				}
+		//			}
+		//		}
+		//	}
+		//}
+	}
+	post {
+		success {
+			script {
+				if (sendmail == 'yes') {
+					emailext body: '''<body leftmargin="8" marginwidth="0" topmargin="8" marginheight="4" offset="0">
+						<table width="95%" cellpadding="0" cellspacing="0" style="font-size: 11pt; font-family: Tahoma, Arial, Helvetica, sans-serif">
+								<tr>
+									<td><br />
+									<b><font color="#0B610B">构建信息</font></b>
+									<hr size="2" width="100%" align="center" /></td>
+								</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>构建名称：${JOB_NAME}</li>
+										<li>构建结果: <span style="color:green"> ${BUILD_STATUS}</span></li>
+										<li>构建编号：${BUILD_NUMBER}  </li>
+										<li>JENKINS 构建地址：${BUILD_URL}</li>
+										<li>GIT 分支/TAG：${BRANCH_NAME}</li>
+										<li>变更记录: ${CHANGES,showPaths=true,showDependencies=true,format="<pre><ul><li>提交ID: %r</li><li>提交人：%a</li><li>提交时间：%d</li><li>提交信息：%m</li><li>提交文件：<br />%p</li></ul></pre>",pathFormat="         %p <br />"}
+									</ul>
+								</td>
+							</tr>
+						</table>
+					</body>
+					</html>
+					''', subject: '${PROJECT_NAME}', to: 'yangchengyi@goldenridge.ltd'
+				}
+			}
+		}
+		failure {
+			script {
+				if (sendmail == 'yes') {
+					emailext body: '''<!DOCTYPE html>
+						<html>
+							<head>
+								<meta charset="UTF-8">
+							</head>
+						<body leftmargin="8" marginwidth="0" topmargin="8" marginheight="4" offset="0">
+							<table width="95%" cellpadding="0" cellspacing="0" style="font-size: 11pt; font-family: Tahoma, Arial, Helvetica, sans-serif">
+								<tr>
+									<td><br />
+									<b><font color="#0B610B">构建信息</font></b>
+									<hr size="2" width="100%" align="center" /></td>
+								</tr>
+								<tr>
+									<td>
+										<ul>
+											<li>构建名称：${JOB_NAME}</li>
+											<li>构建结果: <span style="color:red"> ${BUILD_STATUS}</span></li>
+											<li>构建编号：${BUILD_NUMBER}  </li>
+											<li>GIT 地址：${BUILD_URL}</li>
+											<li>GIT 分支：${BRANCH_NAME}</li>
+											<li>变更记录: ${CHANGES,showPaths=true,showDependencies=true,format="<pre><ul><li>提交ID: %r</li><li>提交人：%a</li><li>提交时间：%d</li><li>提交信息：%m</li><li>提交文件：%p</li></ul></pre>",pathFormat="%p <br />"}
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<td><b><font color="#0B610B">构建日志 :</font></b>
+									<hr size="5" width="100%" align="center" /></td>
+								</tr>
+								<tr>
+									<td><textarea cols="150" rows="100" readonly="readonly"	style="font-family: Courier New">${BUILD_LOG}</textarea> </td>
+								</tr>
+							</table>
+						</body>
+						</html>
+					''', subject: '${PROJECT_NAME}', to: 'yangchengyi@goldenridge.ltd'
+				}else {
+					echo 'scm pull error ignore send mail'
+				}
+			}
+		}
+	}
+}

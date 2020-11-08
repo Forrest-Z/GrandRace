@@ -1,0 +1,22 @@
+data {
+    format: ZHD_BINARY
+    serial {
+        device: "/dev/tty_gps"
+        baud_rate: 115200
+    }
+}
+
+rtk_solution_type: RTK_RECEIVER_SOLUTION
+imu_type: ADIS16488
+proj4_text: "+proj=utm +zone=48 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+
+tf {
+    frame_id: "world"
+    child_frame_id: "novatel"
+}
+
+# If given, the driver will send velocity info into novatel one time per second
+wheel_parameters: "SETWHEELPARAMETERS 100 1 1\r\n"
+
+logout_commands: "EVENTOUTCONTROL MARK2 DISABLE\r\n"
+logout_commands: "EVENTOUTCONTROL MARK1 DISABLE\r\n"
